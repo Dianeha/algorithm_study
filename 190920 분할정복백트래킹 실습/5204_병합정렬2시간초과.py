@@ -1,4 +1,5 @@
 import sys
+import time
 sys.stdin = open("input5204.txt", "r")
 
 def MergeSort(L):
@@ -29,6 +30,7 @@ def MergeSort(L):
         result.append(g2.pop(0))
     return result
 
+stime = time.time()
 for tc in range(1, int(input()) + 1):
     N = int(input())
     nums = list(map(int, input().split()))
@@ -36,3 +38,4 @@ for tc in range(1, int(input()) + 1):
     cnt = 0
     res = MergeSort(nums)
     print('#%d %d %d' %(tc, res[N//2], cnt))
+print(time.time()-stime)

@@ -1,6 +1,7 @@
 import sys
 import time
-sys.stdin = open("input5204.txt", "r")
+# sys.stdin = open("input5204.txt", "r")
+sys.stdin = open("inputTest.txt", "r")
 
 def MergeSort(L):
     global cnt
