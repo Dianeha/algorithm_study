@@ -1,4 +1,5 @@
 import sys
+import time
 sys.stdin = open("input5207.txt", "r")
 
 def BinarySearch(L, x):
@@ -18,7 +19,7 @@ def BinarySearch(L, x):
             checkLR.append('L')
     return
 
-
+stime = time.time()
 for tc in range(1, int(input()) + 1):
     N, M = map(int, input().split())
     A = sorted(list(map(int, input().split())))
@@ -29,6 +30,7 @@ for tc in range(1, int(input()) + 1):
         if x in A:
             checkLR = []
             BinarySearch(A, x)
+            print(checkLR)
             f = 0
             if not checkLR or len(checkLR) == 1:
                 cnt += 1
@@ -40,6 +42,7 @@ for tc in range(1, int(input()) + 1):
                 if not f:
                     cnt += 1
     print('#%d %d' % (tc, cnt))
+print(time.time()-stime)
 
 
 
